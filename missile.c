@@ -400,7 +400,7 @@ void impact_artillerie(char tableau[10][10], char grille[10][10], int ligne, int
                 Bateaux5->vie=Bateaux5->vie-1;
 
                 if(Bateaux5->vie==0){
-                    Bateaux5->vie--;
+                    Bateaux5->taille=0;
 
                     if(Bateaux5->vie==0){
 

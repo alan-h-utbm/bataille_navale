@@ -265,6 +265,8 @@ void deplacement_bateaux(char grille[10][10], boat *Bateaux2,boat *Bateaux3_1,bo
     int compteur_fin=0;
 
 
+
+
     do {
 
 
@@ -277,6 +279,9 @@ void deplacement_bateaux(char grille[10][10], boat *Bateaux2,boat *Bateaux3_1,bo
                   (Bateaux4->vie == 0 && taille == 4) || (Bateaux3->vie == 0 && taille == 3) ||
                   (Bateaux3_1->vie == 0 && taille == 3) || (Bateaux2->vie == 0 && taille == 2)) &&
                  compteur_fin == 10000);
+
+
+
 
 
 
