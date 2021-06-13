@@ -17,7 +17,11 @@
 // Une pour l'utilsateur ou on affichera les cases touchees apelee ...
 // Une autre pour le programme où seront renseignées les postitions des bateaux (les cases sans bateaux recevront le charactere '-')
 
-
+/**
+ * remplis les cases des deux tableaux avec le charactere '-'
+ * @param grille : avec les points d'impact
+ * @param tableau : avec les positions des bateaux
+ */
 void initgrille(char grille[10][10], char tableau[10][10]) {
 
 
@@ -33,7 +37,9 @@ void initgrille(char grille[10][10], char tableau[10][10]) {
     }
 
 }
-
+/**
+ * Affiche les regles et le nombre de bateaux à couler
+ */
 void regles(){
 
     //affiche les regles et le nombre de bateaux en debut de partie
@@ -72,10 +78,13 @@ void affiche_grille(char grille[10][10]){
 
 
 }
-
+/**
+ * Affiche la grille de l'utilisateur avec les points d'impact
+ * @param grille
+ */
 void grilleutilisateur(char grille[10][10]){
 
-// affiche la grille a l'utilisateur pour qu'il voie les cases qu'il a touché
+
   
     int i, j;
 
@@ -101,6 +110,13 @@ void grilleutilisateur(char grille[10][10]){
 
 }
 
+/**
+ * Fonction interveantn apres chaque tir de missile
+
+ * @param visible gere si les grilles doivent etre affiches en fonction du mode de jeu
+ * @param nbimpact nombre de fois qu'un bateau a été touvé par un seul missile
+
+ */
 void affichecoup(char tableau[10][10], char grille[10][10], int visible, int* nbimpact, boat* Bateaux2,boat* Bateaux3_1,boat* Bateaux3,boat* Bateaux4,boat* Bateaux5){
 
     

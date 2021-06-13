@@ -47,6 +47,7 @@ int invvide=0;
 
 
 
+    printf("debut");
 
     //affiche menu princial+choix sur modes//
     level=debut_partie_choixlevel();
@@ -169,8 +170,11 @@ int invvide=0;
             }
 
            if(active==1){
-                        deplacement_bateaux(grille,&Bateaux2,&Bateaux3_1,&Bateaux3,&Bateaux4,&Bateaux5);
+                        deplacement_bateaux(grille, tableau ,&Bateaux2,&Bateaux3_1,&Bateaux3,&Bateaux4,&Bateaux5);
+               printf("\n active");
                        }
+
+            affiche_grille(grille);
             //on met les fonctions affiche grille (contenant les positions des bateaux) en commentaire afin de pouvoir
             //rapidement les remttre en place lorsque l'on veut s'assurer du bon fonctionnement du programme
             //affiche_grille(grille);

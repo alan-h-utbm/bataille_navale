@@ -44,7 +44,7 @@ char debut_partie_choixlevel() {
 
 
 //choix de la difficultée
-    //on ne choisit la difficulte que si on demare une nouvelle partie, en effet, il ne sert a rein de le choisir si on quitte le jeu
+    //on ne choisit la difficulte que si on demare une nouvelle partie, en effet, il ne sert a rien de le choisir si on quitte le jeu
     // et on peut pas choisir une nouvelle difficulte losrque que l'on charge une partie deja existante
     
         switch (a) {

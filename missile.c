@@ -18,17 +18,18 @@
  * @return type missile (le choix du type de missille)
  */
 char choix_type_missile(inventaire *NB_missile, char tableau[10][10], char grille[10][10], boat *Bateaux2,boat *Bateaux3_1,boat *Bateaux3,boat *Bateaux4,boat *Bateaux5, int visible) {
-   // la fontion qui demande le choix du missile et appelera les differents codes de chaque missile
-   // elle ne s'arretera pas tant qu'il reste des missiles
+
+
 
     char type_missile;
     int valide;
 
 
 
-   // on a prefere afficher le nombre d'exemplaires de chaque missile pour eviter que l'utilsateur essaye d'un tirer un et de recommencer 
+   // on a preféré afficher le nombre d'exemplaires de chaque missile pour eviter que l'utilsateur essaye d'un tirer un et de recommencer
    // à essayer de le tirer en pensant que c'est le nom du missile rentré qui pose probleme
    // Cela lui permet aussi d'eviter d'essayer de tirer un missile pour se rendre compte qu'il n'a plus aucun exemplaire de celui ci
+
     printf("\n");
     printf("Quel type de missile voulez vous choisir\nC : classique - %d exemplaires \nB: bombe - %d exemplaires \nA: artillerie - %d exemplaires \nT: tactique - %d exemplaires \n", NB_missile->simple, NB_missile->bombe, NB_missile->artillerie, NB_missile->tactique);
 
@@ -86,11 +87,16 @@ char choix_type_missile(inventaire *NB_missile, char tableau[10][10], char grill
 
 
 
-
+/**
+ * Verif est la fonction qui permettera de rentrer les coordonnees du point d'impact "central" des missiles et qui s'assurera
+    que celui ci est valide
+ * @param tableau
+ * @param grille
+ * @param ligne
+ * @param colonne
+ */
 void verif(char tableau[10][10], char grille[10][10], int* ligne, int* colonne) {
 
-    // Verif est la fonction qui permettera de rentrer les coordonnees du point d'impact "central" des missiles et qui s'assurera
-    // que celui ci est valide
 
     int codeerreur=0;
 
@@ -127,7 +133,15 @@ void verif(char tableau[10][10], char grille[10][10], int* ligne, int* colonne) 
 
 
 }
+/**
+ * Gere le comportement du missile d'artillerie
+ * @param tableau
+ * @param grille
+ * @param ligne
+ * @param colonne
+ * @param nbimpact
 
+ */
 void impact(char tableau[10][10], char grille[10][10], int ligne, int colonne, int * nbimpact, boat *Bateaux2,boat *Bateaux3_1,boat *Bateaux3,boat *Bateaux4,boat *Bateaux5) {
 
 // Impact est la fonction qui gere comment un missile impactera la grille et les points de vie d'un bateau
@@ -142,9 +156,6 @@ void impact(char tableau[10][10], char grille[10][10], int ligne, int colonne, i
         ++*nbimpact;
 
 
-
-
-        fflush(stdin);
 
        //la fonction impact n'as un effet que si la case en question possede un bateau et si les points de vie de celui ci ne sont pas nuls
        //si les points de vie sont nul alors la case contenant le bateau sera consideree comme touchee
@@ -207,12 +218,21 @@ void impact(char tableau[10][10], char grille[10][10], int ligne, int colonne, i
 
 }
 
+/**
+ * Gere le comportement de la bombe
+ * @param tableau
+ * @param grille
+ * @param ligne
+ * @param colonne
+ * @param nbimpact
 
+ */
 void bombe(char tableau[10][10], char grille[10][10], int ligne, int colonne, int * nbimpact, boat *Bateaux2,boat *Bateaux3_1,boat *Bateaux3,boat *Bateaux4,boat *Bateaux5){
 
 
 int min1, min2;
 int max1, max2;
+
 // Les lignes suivantes vont restreindre la zone d'action de la fonction ipmpact afin qu'elle n'essaye pas d'atteindre des cases en dehors de la grille
 
     if (colonne==0){
@@ -245,8 +265,10 @@ int max1, max2;
 
             if (grille[k][l] != '_' && tableau[k][l] != 'X' && tableau[k][l] != 'O') {
                 tableau[k][l] = 'X';
+
                 // on modifie la valeur de la variable nbimpact pour que la fonction affichage appelee apres chaque tir puisse afficher le nombre de missile touchés, cette valeur sera
-                // remise a 0 apres coup
+                // elle sera remise à 0 dans affichecoup
+
                 ++*nbimpact;
 
 
