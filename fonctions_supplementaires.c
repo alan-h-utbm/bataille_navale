@@ -149,7 +149,9 @@ char demande(){
 
 
 }
-
+/**
+*C'est cette fonction qui vérifie si il reste des missiles ou des bateaux non coulés, elle est aussi responsable d'afficher les messages en cas de victoire
+*/
 void condition(int* completion, int * invvide, inventaire NB_missile, boat Bateaux2, boat Bateaux3_1, boat Bateaux3, boat Bateaux4, boat Bateaux5){
 
     if(Bateaux5.vie==0 && Bateaux4.vie==0 && Bateaux3_1.vie==0 && Bateaux3.vie==0 && Bateaux2.vie==0){
